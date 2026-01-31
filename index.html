@@ -5,19 +5,17 @@
   <title>Start Earning With Digital Skills</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- TikTok Pixel Code Start -->
+  <!-- TikTok Pixel Code -->
   <script>
   !function (w, d, t) {
     w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
     ttq.load('D5CIUOBC77U9GK0PN0J0');
     ttq.page();
   }(window, document, 'ttq');
   </script>
-  <!-- TikTok Pixel Code End -->
 
   <style>
     body {
@@ -69,40 +67,37 @@
     .btn {
       display: block;
       padding: 14px;
-      background: #16a34a;
       color: white;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
+      margin: 12px auto 0;
+      cursor: pointer;
+      max-width: 300px;
+      border: none;
+      width: 100%;
+    }
+    .whatsapp {
+      background: #25D366;
     }
     footer {
       margin-top: 14px;
       font-size: 12px;
       color: #666;
     }
-    /* Added styles for the form */
-    form {
-      margin-top: 20px;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
+    input {
       width: 100%;
       padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ddd;
+      margin: 10px 0;
       border-radius: 8px;
-      box-sizing: border-box;
-    }
-    button.btn {
-      border: none;
-      cursor: pointer;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
 
 <body>
   <div class="card">
+
     <h1>In order to<br><span>Start Earning Good Money With High Digital Skills...</span></h1>
 
     <h2>You Will Need These 3 Things</h2>
@@ -114,35 +109,54 @@
     </ul>
 
     <div class="affirmation">
-      <strong>YES!</strong> I’m ready to apply this life-changing information.
+      <strong>YES!</strong> I have these 3 things and I am going to apply this life-changing information once it is in my hands.
     </div>
 
-    <!-- Modified form for client-side validation and redirect, no backend -->
-    <form id="registrationForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required minlength="2">
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-      <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required minlength="10">
-      <button type="submit" class="btn">CLICK HERE TO REGISTER NOW!</button>
-    </form>
+    <!-- Name Input -->
+    <input type="text" id="name" placeholder="Enter Your Name (Optional)">
 
-    <p style="font-size: 12px; color: #666; margin-top: 10px;">Your information is safe with us and will only be used for registration purposes.</p>
+    <!-- CTA Button -->
+    <button id="joinBtn" class="btn whatsapp" onclick="goToWhatsApp()">
+      CLICK HERE TO JOIN THE TRAINING NOW!
+    </button>
 
-    <footer>© 2026 High Posting Jobs</footer>
+    <footer>© 2026 HIGH POSTING JOBS</footer>
+
   </div>
 
-  <!-- Added JavaScript for validation and redirect -->
-  <script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const form = event.target;
-      if (form.checkValidity()) {
-        // Fields are valid, redirect to thankyou.html without sending data
-        window.location.href = 'thankyou.html';
-      } else {
-        // Browser will show validation errors
-        form.reportValidity();
-      }
-    });
-  </script>
+<script>
+  function goToWhatsApp() {
+
+    const btn = document.getElementById("joinBtn");
+    btn.disabled = true;
+    btn.innerText = "Redirecting...";
+
+    const name = document.getElementById("name").value.trim();
+
+    let message = "I am here for the training, my name is ";
+
+    if(name !== "") {
+      message += name;
+    } else {
+      message += "________";
+    }
+
+    const encodedMessage = encodeURIComponent(message);
+
+    const phoneNumber = "2347074474275";
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // TikTok Conversion Event (optional but powerful)
+    if (window.ttq) {
+      ttq.track('CompleteRegistration');
+    }
+
+    setTimeout(() => {
+      window.location.href = whatsappURL;
+    }, 500);
+  }
+</script>
+
 </body>
 </html>
